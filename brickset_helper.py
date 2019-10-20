@@ -328,65 +328,45 @@ def count_in_lists(list_ls):
     return counts_ls
 
 
+# map themes to category for anova
+def get_category(theme):
 
+    if theme in ['Town', 'Studios', 'Island Xtreme Stunts']:
+        return 'Town'
 
+    if theme in ['City', 'World City']:
+        return 'City'
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-DEPRECATED
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    if theme in ['Space']:
+        return 'Space'
 
-# endpoint for listing years and corresponding urls
-def get_years():
+    if theme in ['Castle']:
+        return 'Castle'
 
-    # get the page's full html
+    if theme in ['Pirates', 'Adventurers', 'Western']:
+        return 'Historic'
 
-    endpoint_url = BROWSE_URL
-    try:
-        response = requests.get(endpoint_url)
-        # raise an exception based on status code
-        response.raise_for_status()
-    except Exception as err:
-        print(f'Endpoint: {endpoint_url}') 
-        print(f'Error: {err}') 
-        return
+    if theme in ['Ninjago', 'Legends of Chima', 'Nexo Knights', 'Exo-Force', 'The LEGO Movie', 'Alpha Team', 'The LEGO Ninjago Movie', 'Aquazone',
+                'Speed Champions', 'Atlantis', 'Power Miners', 'Rock Raiders', 'Ultra Agents', 'Agents', 'Monster Fighters']:
+        return 'Lego-Block'
 
-    page_sp = bs.BeautifulSoup(response.text, 'html.parser')
+    if theme in ['Star Wars', 'Harry Potter', 'The Hobbit', 'Jurassic World', 'Indiana Jones', 'The Lord of the Rings', 'Toy Story', 
+                'Pirates of the Caribbean']:
+        return 'Licensed-Movie'
 
-    # find the years section
-    
-    section_sp = page_sp.find_all('section', {'class': 'navrow'})
-    #print(len(section_sp))
+    if theme in ['Disney', 'Marvel Super Heroes', 'DC Comics Super Heroes', 'The LEGO Batman Movie', 'Teenage Mutant Ninja Turtles', 
+                'Batman', 'SpongeBob SquarePants']:
+        return 'Licensed-Other'
 
-    year_sp = None
-    for sect in section_sp:
-        h1_sp = sect.find_all('h1')
-        
-        for h1 in h1_sp:
-            if h1.text == 'Years':
-                year_sp = sect
+    if theme in ['Trains', 'Sports', 'Juniors', 'Creator Expert', 'Minecraft', 
+                ]:
+        return 'Exclude'
 
-    if not year_sp:
-        print(f'year section not found')
-        return
+    if theme in ['Creator', 'Mixels', 'BrickHeadz', 'Racers', 'Fabuland', 'Architecture', 'Elves', 'Cars', 'Jack Stone', 'Unikitty', '4 Juniors',
+                'Galidor', 'Model Team', 'DC Super Hero Girls']:
+        return 'Exclude-No-Minifigs'        
 
-    # get the years data
-
-    year_ls = []
-
-    year_link_sp = year_sp.find_all('a')
-    print(f'years found: {len(year_link_sp)}')
-
-    for link in year_link_sp:
-        year_dx = {
-            'year': link.text,
-            'url': link['href'],
-        }
-        year_ls.append(year_dx)
-
-    return year_ls
-
-
-
+    return 'None'
 
 
 
