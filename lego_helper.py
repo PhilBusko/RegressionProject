@@ -1,5 +1,5 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-BRICKSET HELPER
+LEGO HELPER
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 import requests
@@ -13,7 +13,7 @@ BROWSE_URL = 'https://brickset.com/browse/sets'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-FUNCTIONS
+BRICKSET FUNCTIONS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
@@ -328,7 +328,12 @@ def count_in_lists(list_ls):
     return counts_ls
 
 
-# map themes to category for anova
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+GENERAL FUNCTIONS
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+# map themes to category 
 def get_category(theme):
 
     if theme in ['Town', 'Studios', 'Island Xtreme Stunts']:
@@ -367,6 +372,49 @@ def get_category(theme):
         return 'Exclude-No-Minifigs'        
 
     return 'None'
+
+
+# map colors to super-color group
+def get_super_color(color_tx):
+
+    if color_tx in ['White']:
+        return 'White'
+
+    if color_tx in ['Tan', 'Dark Tan', 'Medium Dark Flesh', 'Light Flesh']:
+        return 'Tan'
+
+    if color_tx in ['Yellow', 
+                    'Pearl Gold', 'Chrome Gold',    # gold is very rare
+                    'Orange', 'Dark Orange', 'Bright Light Orange', 'Medium Orange']:    # orange is quite rare
+        return 'Yellow'
+ 
+    if color_tx in ['Red', 'Dark Red', 
+                    'Pink', 'Dark Pink', 'Bright Pink', 'Magenta']:       # pink is very rare
+        return 'Red'
+
+    if color_tx in ['Green', 'Lime', 'Dark Green', 'Olive Green', 'Sand Green', 'Dark Turquoise', 'Medium Lime', 
+                    'Bright Green', 'Yellowish Green']:
+        return 'Green'
+
+    if color_tx in ['Reddish Brown', 'Brown', 'Dark Brown', ]:
+        return 'Brown'
+
+    if color_tx in ['Blue', 'Dark Blue', 'Dark Azure', 'Medium Blue', 'Medium Azure', 'Maersk Blue', 'Sand Blue',
+                    'Dark Purple', 'Medium Lavender', 'Sand Purple', 'Purple', ]:    # purple is very rare 
+        return 'Blue'
+
+    if color_tx in ['Light Bluish Gray', 'Light Gray', 'Dark Bluish Gray', 'Dark Gray', 'Pearl Dark Gray', 
+                    'Flat Silver', 'Chrome Silver', 'Pearl Light Gray', 'Metallic Silver']:
+        return 'Gray'
+
+    if color_tx in ['Black']:
+        return 'Black'
+
+    if color_tx in ['Trans-Neon Orange', 'Trans-Neon Green', 'Trans-Dark Blue', 'Trans-Clear', 'Trans-Red', 
+                    'Trans-Light Blue', 'Trans-Black']:
+        return 'Transparent'
+
+    return None
 
 
 
