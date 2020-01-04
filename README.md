@@ -1,20 +1,36 @@
 # Regression for Pricing of LEGO Sets
-FIS Mod4 Project
 
-*by Phillip Busko & Sorin Luca*
+The goal of this project is to predict the store price of new LEGO sets. That is, based on properties of the set (number of pieces, colors, themes, etc), we will predict the price at which the company will release the set. 
 
-**Project Presentation**
-[Google Docs](https://docs.google.com/presentation/d/1h-8MnhFCwu_dVXVftjegIf_1CB65Z5tXdPTkiSW0yjo/edit?usp=sharing)
+This project was created under the FlatIron School's Data Science Bootcamp, for the Module 4 project.
 
-## Summary
+[Non-Technical Presentation (Google Slides)](https://docs.google.com/presentation/d/1h-8MnhFCwu_dVXVftjegIf_1CB65Z5tXdPTkiSW0yjo/edit?usp=sharing)
 
-Predict the launching price of various LEGO sets based on available information such as:
+## Project Roadmap
 
-- launch year
-- number of total pieces
-- number of different pieces
-- the colors of the pieces
-- the theming of the set
+**Contributors:** Phillip Busko & Sorin Luca
+
+**Data Sources**
+- [brickset.com](https://brickset.com)
+- [kaggle.com](https://www.kaggle.com/rtatman/lego-database)
+
+**Tasks**
+- Scrape and clean data from brickset website *(PB)*
+- Join kaggle data and run feature engineering *(SL)*
+- Run linear regression for store price *(PB)*
+- Run support vector regression for store price *(SL)*
+
+
+## Results
+
+Both the linear regression and SVR (with linear kernel) models were able to fit the launch price with a R<sup>2</sup> of about 0.86. The SVR with an RBF kernel was slightly better with a R<sup>2</sup> of about 0.89.
+
+The number of total parts and the number of different parts are the most important independent variables for this problem.
+
+
+
+
+
 
 ## Methodology
 
@@ -27,18 +43,7 @@ both linear and radial basis function (RBF) kernels.
 
 **Data** was obtained from two sources:
 
-1. [brickset.com](https://brickset.com)
 
-2. [kaggle.com](https://www.kaggle.com/rtatman/lego-database)
-
-## Results
-
-Both the linear regression and SVR (with linear kernel) models were able
-to fit the launch price with a $R^2$ of about 0.86. The SVR with
-an RBF kernel was slightly better with an $R^2$ of about 0.89.
-
-The number of total parts and the number of different parts are the most
-important independent variables for this problem.
 
 ## Work breakdown
 

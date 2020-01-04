@@ -353,7 +353,7 @@ def get_category(theme):
 
     if theme in ['Ninjago', 'Legends of Chima', 'Nexo Knights', 'Exo-Force', 'The LEGO Movie', 'Alpha Team', 'The LEGO Ninjago Movie', 'Aquazone',
                 'Speed Champions', 'Atlantis', 'Power Miners', 'Rock Raiders', 'Ultra Agents', 'Agents', 'Monster Fighters']:
-        return 'Lego-Block'
+        return 'Lego-Brand'
 
     if theme in ['Star Wars', 'Harry Potter', 'The Hobbit', 'Jurassic World', 'Indiana Jones', 'The Lord of the Rings', 'Toy Story', 
                 'Pirates of the Caribbean']:
