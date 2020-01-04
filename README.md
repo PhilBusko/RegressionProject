@@ -6,6 +6,7 @@ This project was created under the FlatIron School's Data Science Bootcamp, for 
 
 [Non-Technical Presentation (Google Slides)](https://docs.google.com/presentation/d/1h-8MnhFCwu_dVXVftjegIf_1CB65Z5tXdPTkiSW0yjo/edit?usp=sharing)
 
+
 ## Project Roadmap
 
 **Contributors:** Phillip Busko & Sorin Luca
@@ -30,25 +31,12 @@ The number of total parts and the number of different parts are the most importa
 
 
 
-
-
 ## Methodology
 
-We have implemented two algorithms for the regression:
+**1. Scrape Brickset:** Data was scraped using the requests and beautifulsoup libraries. Since there are thousands of sets available, the work was broken down by first getting the url of each set for each year. Then each url is visited, and it's data is scraped. The data fields available from this are: set-id, name, year, themes, minifig count, store price, used price, user rating, and set type.
 
-1. *Linear Regression* (the scikit-learn implementation).
+![](assets/set_price.png)
 
-2. *Support Vector Regression* (SVR, the scikit-learn implementation) with
-both linear and radial basis function (RBF) kernels.
+**2. Feature Engineering:** The kaggle data was joined with the basic data for additional features. Some of these features are readily availabe, while others were manufactured based on some guesses as to what factors might be contributing to establishing the store price. 
+Also at this point some filtering was done on the sets, so that LEGO non-sets, such as clothing items, are removed from our data. The new data fields are: total number of pieces, number of different pieces, primary color, secondary color, and number of different colors. 
 
-**Data** was obtained from two sources:
-
-
-
-## Work breakdown
-
-- **Data**: Phil scrapped the brickset website, while Sorin processed and
-merged the kaggle dataset. Both cleaned and inspected the data.
-
-- **Modeling**: Phil performed the linear regression analysis, while
-Sorin performed the SVR analysis.
