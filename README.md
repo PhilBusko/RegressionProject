@@ -39,7 +39,7 @@ The number of total parts and the number of different parts are the most importa
 
 **3. Algorithm Preparation:** First, some filtering was done on the rows, so that LEGO non-sets, such as clothing items, are removed from the data. Also, any rows without store price data are eliminated. The categorical columns (color, themes) were aggregated into more coarse-grain values and then one-hot encoded. Finally, all the columns are standardized with sklearn.preprocessing.StandardScaler.
 
-**4. Linear Regression:** Linear regression was run with 3 different scenarios: baseline, ridge and lasso. Each algorithm was run with a grid search to tune the regularization hyper-parameter lambda. Each run was cross-validated with 5 folds. The next graph shows the CV test scores, where the error bars are the standard deviation of the CV tests.
+**4. Linear Regression:** Linear regression was run with 3 different scenarios: baseline, ridge and lasso. Each algorithm was run with a grid search to tune the regularization hyper-parameter <b>&#955;</b>. Each run was cross-validated with 5 folds. The next graph shows the CV test scores, where the error bars are the standard deviation of the CV tests. The graph shows that the best configuration is lasso with a <b>&#955;</b> of 0.1.
 
 ![](assets/linear_algorithms.png)
 
